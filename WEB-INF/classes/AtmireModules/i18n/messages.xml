@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+
+    <message key="xmlui.atmire-modules-theme.Navigation.back">Back to DSpace Home</message>
+
+    <message key="xmlui.AtmireModules.AtmireModulesOverviewTransformer.head">Atmire modules overview</message>
+    <message key="xmlui.AtmireModules.AtmireModulesOverviewTransformer.auth_header">The file is restricted</message>
+   	<message key="xmlui.AtmireModules.AtmireModulesOverviewTransformer.auth_message">The file you are attempting to access is a restricted file and requires credentials to view. Please login below to access the file.</message>
+
+
+    <message key="xmlui.AtmireModules.Navigation.head">Atmire modules</message>
+    <message key="xmlui.AtmireModules.Navigation.documentation">Atmire module overview</message>
+
+
+</catalogue>

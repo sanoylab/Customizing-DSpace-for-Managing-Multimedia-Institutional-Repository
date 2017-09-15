@@ -1,0 +1,130 @@
+.ui-dialog,
+form#statistics_GraphEditor_div_wrapper,
+.ui-dialog td,
+form#statistics_GraphEditor_div_wrapper td,
+.ui-dialog th,
+form#statistics_GraphEditor_div_wrapper th,
+.ui-dialog select,
+form#statistics_GraphEditor_div_wrapper select{
+    font-size: 12px;
+}
+
+.ui-dialog .odd,
+.ui-dialog .even,
+form#statistics_GraphEditor_div_wrapper .odd,
+form#statistics_GraphEditor_div_wrapper .even {
+    background-color: white;
+}
+
+.ui-dialog th,
+form#statistics_GraphEditor_div_wrapper th {
+    text-align: left;
+    padding:1px;
+}
+
+.ui-dialog td,
+form#statistics_GraphEditor_div_wrapper td {
+    padding:0;
+}
+
+.ui-dialog fieldset.ds-checkbox-field input,
+form#statistics_GraphEditor_div_wrapper fieldset.ds-checkbox-field input {
+    margin: 3px 3px 3px 4px;
+}
+
+.ui-dialog label,
+form#statistics_GraphEditor_div_wrapper label {
+    padding: 0;
+    float:none;
+    display: inline;
+}
+
+.ui-dialog table,
+form#statistics_GraphEditor_div_wrapper table {
+    border-spacing: 2px;
+}
+
+.ui-dialog table.leftpopup,
+form#statistics_GraphEditor_div_wrapper table.leftpopup {
+    border-spacing: 0;
+}
+
+.ui-dialog li.ds-form-item,
+form#statistics_GraphEditor_div_wrapper li.ds-form-item {
+    padding: 5px;
+}
+
+.ui-dialog fieldset.ds-form-list,
+form#statistics_GraphEditor_div_wrapper fieldset.ds-form-list {
+    border: none;
+}
+
+.ui-dialog div.ds-form-content,
+form#statistics_GraphEditor_div_wrapper div.ds-form-content {
+    padding: 0;
+}
+
+.ui-dialog li,
+form#statistics_GraphEditor_div_wrapper li {
+    margin-left: 0;
+}
+
+.ui-dialog div.ds-form-content,
+form#statistics_GraphEditor_div_wrapper div.ds-form-content {
+    width: auto;
+}
+
+.ui-dialog div.fieldset.ds-form-list ol ,
+form#statistics_GraphEditor_div_wrapper fieldset.ds-form-list ol  {
+    padding: 3px;
+}
+
+.ui-dialog .ds-text-field ,
+form#statistics_GraphEditor_div_wrapper .ds-text-field  {
+    border: 1px solid #DDDDDD;
+    margin: 3px;
+    padding: 3px;
+}
+
+.borderradius .ui-dialog-titlebar,
+.borderradius .ui-tabs-nav{
+    border-radius: 5px 5px 0 0;
+}
+
+.ui-accordion-header.ui-state-default,
+.ui-tabs-nav .ui-state-default {
+    background: #FAFAFA;
+}
+
+.ui-tabs-nav .ui-state-active {
+    background: #FFFFFF;
+}
+
+.ui-accordion-header.ui-state-default.ui-state-hover,
+.ui-tabs-nav .ui-state-hover {
+    border: 1px solid #DADADA;
+    background: #fcfcfc url(../../images/jquery_ui/ui-bg_flat_100_b6c8d9_40x100.png) 50% 50% repeat-x;
+    font-weight: bold;
+}
+
+.ui-tabs-nav .ui-state-active.ui-state-hover {
+    border: 1px solid #DADADA;
+    background: #FFFFFF;
+    font-weight: bold;
+}
+
+.ui-accordion-header.ui-state-hover a,
+.ui-tabs-nav .ui-state-hover a{
+    color: #444444;
+}
+
+
+.ui-accordion-header.ui-state-active.ui-state-hover,
+.ui-accordion-header.ui-state-active {
+    border: 1px solid #9CACBA;
+    color: #444444;
+}
+
+.ui-accordion-header.ui-state-hover .ui-icon {
+    background-image: url("../../images/jquery_ui/ui-icons_444444_256x240.png");
+}

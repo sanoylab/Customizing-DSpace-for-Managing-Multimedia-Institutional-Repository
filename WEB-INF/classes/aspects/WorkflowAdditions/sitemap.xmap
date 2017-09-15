@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+
+        <map:transformers>
+            <map:transformer name="DeleteItemButtonTransformer" src="com.atmire.dspace.app.xmlui.aspect.workflowadditions.DeleteItemButtonTransformer"/>
+            <map:transformer name="BackToSubmissionButtonTransformer" src="com.atmire.dspace.app.xmlui.aspect.workflowadditions.BackToSubmissionButtonTransformer"/>
+            <map:transformer name="TaskStatisticsTransformer" src="com.atmire.dspace.app.xmlui.aspect.workflowadditions.TaskStatisticsTransformer"/>
+        </map:transformers>
+
+        <map:matchers default="wildcard">
+                <map:matcher name="HandleTypeMatcher" src="org.dspace.app.xmlui.aspect.general.HandleTypeMatcher"/>
+                <map:matcher name="HandleAuthorizedMatcher" src="org.dspace.app.xmlui.aspect.general.HandleAuthorizedMatcher"/>
+        </map:matchers>
+
+        <map:actions>
+                <map:action name="NotModifiedAction" src="org.dspace.app.xmlui.aspect.general.NotModifiedAction"/>
+                <map:action name="DeleteItemAction" src="com.atmire.dspace.app.xmlui.aspect.workflowadditions.DeleteItemAction"/>
+                <map:action name="SendItemToSubmissionAction" src="com.atmire.dspace.app.xmlui.aspect.workflowadditions.SendItemToSubmissionAction"/>
+        </map:actions>
+
+        <map:selectors>
+            <map:selector name="AuthenticatedSelector" src="org.dspace.app.xmlui.aspect.general.AuthenticatedSelector"/>
+            <map:selector name="IfModifiedSinceSelector" src="org.dspace.app.xmlui.aspect.general.IfModifiedSinceSelector"/>
+        </map:selectors>
+    </map:components>
+
+    <map:pipelines>
+        <map:pipeline>
+
+            <map:generate/>
+
+            <map:match pattern="handle/*/*">
+                    <map:match type="HandleAuthorizedMatcher" pattern="READ">
+                            <map:match type="HandleTypeMatcher" pattern="item">
+                                <map:select type="browser">
+                                  <map:when test="spider">
+                                    <map:select type="IfModifiedSinceSelector">
+                                      <map:when test="true">
+                                        <map:act type="NotModifiedAction"/>
+                                        <map:serialize/>
+                                      </map:when>
+                                      <map:otherwise>
+                                          <map:transform type="DeleteItemButtonTransformer"/>
+                                          <map:transform type="BackToSubmissionButtonTransformer"/>
+                                          <map:serialize type="xml"/>
+                                      </map:otherwise>
+                                    </map:select>
+                                  </map:when>
+                                  <map:otherwise>
+                                      <map:transform type="DeleteItemButtonTransformer"/>
+                                      <map:transform type="BackToSubmissionButtonTransformer"/>
+                                      <map:serialize type="xml"/>
+                                  </map:otherwise>
+                                </map:select>
+                            </map:match>
+                    </map:match>
+            </map:match>
+
+            <map:match pattern="approver/delete">
+                   <map:act type="DeleteItemAction"/>
+            </map:match>
+
+            <map:match pattern="cataloguer/sendtosubmission">
+                   <map:act type="SendItemToSubmissionAction"/>
+            </map:match>
+
+            <map:match pattern="admin/taskstatistics">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="functcss.screen#1111" value="../themes/AtmireModules/lib/css/jquery-ui-1.8.13.custom.css"/>
+                </map:transform>
+
+                <map:select type="AuthenticatedSelector">
+                    <map:when test="administrator">
+                        <map:transform type="TaskStatisticsTransformer"/>
+                    </map:when>
+                    <map:otherwise>
+                        <map:act type="StartAuthentication"/>
+                    </map:otherwise>
+                </map:select>
+            </map:match>
+
+            <map:serialize type="xml"/>
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

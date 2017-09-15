@@ -1,0 +1,39 @@
+<root xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+    <AddItems><i18n:text>xmlui.reporting-suite.batch-edit.bag.add.items</i18n:text></AddItems>
+    <BagItemsEmpty><i18n:text>xmlui.reporting-suite.batch-edit.bag.items.empty</i18n:text></BagItemsEmpty>
+    <BagItemsInfo><i18n:text>xmlui.reporting-suite.batch-edit.bag.items.info</i18n:text></BagItemsInfo>
+    <BagItemsFilter><i18n:text>xmlui.reporting-suite.batch-edit.bag.items.filter</i18n:text></BagItemsFilter>
+    <BagItemsMenu><i18n:text>xmlui.reporting-suite.batch-edit.bag.items.menu</i18n:text></BagItemsMenu>
+    <BagNoItemsSelected><i18n:text>xmlui.reporting-suite.batch-edit.bag.items.no-selected</i18n:text></BagNoItemsSelected>
+    <BagScope><i18n:text>xmlui.reporting-suite.batch-edit.bag.scope</i18n:text></BagScope>
+    <ItemDetails><i18n:text>xmlui.metadataquality.batch-edit.item-details</i18n:text></ItemDetails>
+    <OverviewTasksEmpty><i18n:text>xmlui.metadataquality.batch-edit.overview.items.empty</i18n:text></OverviewTasksEmpty>
+    <OverviewTasksInfo><i18n:text>xmlui.metadataquality.batch-edit.overview.tasks.info</i18n:text></OverviewTasksInfo>
+    <OverviewTasksFilter><i18n:text>xmlui.metadataquality.batch-edit.overview.tasks.filter</i18n:text></OverviewTasksFilter>
+    <OverviewTasksMenu><i18n:text>xmlui.metadataquality.batch-edit.overview.tasks.menu</i18n:text></OverviewTasksMenu>
+    <OverviewNoTasksSelected><i18n:text>xmlui.metadataquality.batch-edit.overview.tasks.no-selected</i18n:text></OverviewNoTasksSelected>
+    <NoticeError><i18n:text>xmlui.metadataquality.batch-edit.notice.error</i18n:text></NoticeError>
+    <NoticeUpdateFailed><i18n:text>xmlui.metadataquality.batch-edit.notice.update-failed</i18n:text></NoticeUpdateFailed>
+    <NewTask><i18n:text>xmlui.metadataquality.batch-edit.new-task</i18n:text></NewTask>
+
+    <VisFieldsEmpty><i18n:text>xmlui.metadataquality.batch-edit.visibility.fields.empty</i18n:text></VisFieldsEmpty>
+    <VisFieldsInfo><i18n:text>xmlui.metadataquality.batch-edit.visibility.fields.info</i18n:text></VisFieldsInfo>
+    <VisFieldsFilter><i18n:text>xmlui.metadataquality.batch-edit.visibility.fields.filter</i18n:text></VisFieldsFilter>
+    <VisFieldsMenu><i18n:text>xmlui.metadataquality.batch-edit.visibility.fields.menu</i18n:text></VisFieldsMenu>
+    <VisNoFieldsSelected><i18n:text>xmlui.metadataquality.batch-edit.visibility.fields.no-selected</i18n:text></VisNoFieldsSelected>
+    <VisShowAll><i18n:text>xmlui.metadataquality.batch-edit.visibility.show-all</i18n:text></VisShowAll>
+    <VisHideAll><i18n:text>xmlui.metadataquality.batch-edit.visibility.hide-all</i18n:text></VisHideAll>
+
+    <EditModeAdvanced><i18n:text>xmlui.metadataquality.batch-edit.edit-mode.advanced</i18n:text></EditModeAdvanced>
+    <EditModeSimple><i18n:text>xmlui.metadataquality.batch-edit.edit-mode.simple</i18n:text></EditModeSimple>
+
+    <OverlayExistsButInvisible><i18n:text>xmlui.metadataquality.batch-edit.overlay.exists-but-invisible</i18n:text></OverlayExistsButInvisible>
+    <OverlayExists><i18n:text>xmlui.metadataquality.batch-edit.overlay.exists</i18n:text></OverlayExists>
+    <OverlayProcessing><i18n:text>xmlui.metadataquality.batch-edit.overlay.processing</i18n:text></OverlayProcessing>
+    <OverlaySave><i18n:text>xmlui.metadataquality.batch-edit.overlay.save</i18n:text></OverlaySave>
+    <OverlayCancel><i18n:text>xmlui.metadataquality.batch-edit.overlay.cancel</i18n:text></OverlayCancel>
+    <OverlayLang><i18n:text>xmlui.metadataquality.batch-edit.overlay.language</i18n:text></OverlayLang>
+    <OverlayUnsavedChanges><i18n:text>xmlui.metadataquality.batch-edit.overlay.unsaved-changes</i18n:text></OverlayUnsavedChanges>
+    <OverlayWarning><i18n:text>xmlui.metadataquality.batch-edit.overlay.warning</i18n:text></OverlayWarning>
+    <OverlayConfirmStop><i18n:text>xmlui.metadataquality.batch-edit.overlay.confirm-stop</i18n:text></OverlayConfirmStop>
+</root>

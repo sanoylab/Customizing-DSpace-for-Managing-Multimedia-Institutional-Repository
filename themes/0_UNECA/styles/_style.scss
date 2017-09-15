@@ -1,0 +1,398 @@
+/**
+ * The contents of this file are subject to the license and copyright
+ * detailed in the LICENSE and NOTICE files at the root of the source
+ * tree and available online at
+ *
+ * http://www.dspace.org/license/
+ */
+
+/**
+ * You can put your own style in this file.
+ * It will be included in all color schemes
+ */
+
+//example mixin to set the text-selection style
+@mixin selection {
+    ::-moz-selection { @content; }
+    ::selection { @content; }
+}
+
+@mixin central-strike {
+    display: table;
+    white-space: nowrap;
+    &:before, &:after {
+        border-top: 1px solid $page-header-border-color;
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.5em;
+        width: 45%;
+    }
+    &:before {
+        right: 10%;
+    }
+    &:after {
+        left: 10%;
+    }
+}
+
+@import "custom_variables";
+@import "grid";
+@import "header";
+@import "footer";
+@import "sidebar";
+@import "trail";
+@import "homepage";
+@import "reference-list";
+@import "atmire-cua";
+
+h1, h2
+{
+    font-weight: normal;
+}
+
+.dark {
+    color: $dark-foreground-color;
+    background-color: $dark-background-color;
+}
+
+.inverted{
+    color:$body-bg;
+    background-color: $brand-primary;
+}
+
+.dark, .inverted{
+
+    a {
+        color: $body-bg;
+        &:focus {
+            color: darken($body-bg, 10%);
+        }
+    }
+}
+
+.btn-dark {
+    @include button-variant($btn-dark-fg, $btn-dark-bg, $btn-dark-border-color);
+}
+
+.table-display{
+    display: table;
+}
+
+.table-cell-display {
+    display: table-cell;
+
+}
+
+.page-header {
+    padding-bottom: (($line-height-computed / 2) - 1);
+    margin: 0 0 $line-height-computed;
+    border-bottom: 1px solid $page-header-border-color;
+}
+
+h3{
+    font-weight: normal;
+    border-bottom: 1px solid $page-header-border-color;
+    margin-bottom: $line-height-computed;
+    padding-bottom: (($line-height-computed / 2) - 1);
+}
+
+.ds-static-div.primary{
+    overflow: hidden;
+}
+
+#languages a {
+    display: inline-block;
+    padding-left: 3px;
+
+    img {
+        width: 30px;
+    }
+}
+
+.tableDiv{
+    display: table;
+}
+
+.tableCellDiv{
+    display: table-cell;
+}
+
+.valign-middle
+{
+    vertical-align: middle;
+}
+
+.smallPaddingRight
+{
+    padding-right: 10px;
+}
+
+.smallMarginTop
+{
+    padding-top: 15px;
+}
+
+.homePageButtons
+{
+    margin-top: 50px;
+}
+
+.icon-box
+{
+    font-size: 60px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid rgba(51, 51, 51, 0.73);
+    width: 85px;
+    height: 85px;
+}
+
+.icon-box span{
+    display: block;
+    margin-bottom: 12px;
+}
+
+.icon-box-text{
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.homePageButtons a{
+    color: rgba(51, 51, 51, 0.73);
+}
+
+.homePageButtons a:hover{
+  text-decoration: none;
+}
+
+
+#main-multimedia-news img.multimedia
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#main-multimedia-news h3.ds-div-head{
+    font-size: 20px;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom: 0px;
+}
+
+#main-multimedia-news h3.ds-div-head:before, h3.ds-div-head:after{
+    border:none;
+    width: 0px;
+}
+
+#main-multimedia-news .multimedia-block {
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    height: 270px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#aspect_artifactbrowser_ItemViewer_div_item-view .glyphicon.glyphicon-file {
+    margin-left: -14px;
+    font-size: 120px;
+    height: 120px;
+    width: 120px;
+    background-size: 90px;
+    margin-top: -1px;
+    color: $btn-dark-fg;
+}
+
+.simple-item-view-share i {
+    text-decoration: inherit;
+}
+
+.simple-item-view-collections ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.multimedia-content {
+    position: absolute;
+    top: 60px;
+    bottom: 6px;
+    left: 22px;
+    right: 22px;
+    overflow:auto;
+
+    @media (max-width: $screen-sm-max) {
+        top: 35px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+#aspect_submission_submit_AJAXControlledVocabularyTransformer_div_vocabulary {
+    ul {
+        list-style-type: none;
+
+        label {
+            margin-left: 10px;
+        }
+    }
+}
+
+#aspect_discovery_RelatedItems_div_item-related, #aspect_discovery_SimpleSearch_div_search-results, #aspect_discovery_AJAXVocabularySearch_div_search-results{
+
+    h5 {
+        font-size:15px;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .ds-artifact-list > div, > .clearfix {
+        margin-bottom:20px;
+
+        &:hover {
+          background: #fAfAfA;
+        }
+    }
+
+    .simple-item-view-authors {
+        margin-top: -5px;
+        color: rgb(139, 139, 139);
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .simple-item-view-citation {
+        margin-bottom:0px;
+        font-size: 13px;
+    }
+
+    .thumbnail {
+        background: none;
+    }
+
+    i.glyphicon.glyphicon-file {
+        font-size: 120px;
+        height: 120px;
+        width: 120px;
+        color: $icon-gray;
+        margin-top: 9px;
+        margin-left: -10px;
+    }
+
+    img {
+        margin-left:0px;
+        margin-right:0px;
+    }
+}
+
+.item-summary-view-metadata .thumbnail-icon, #aspect_discovery_SimpleSearch_div_search-results .thumbnail-icon, #aspect_discovery_AJAXVocabularySearch_div_search-results .thumbnail-icon{
+    font-size: 120px;
+    color:$uneca-blue;
+}
+
+.recent-submission .glyphicon-file {
+    font-size: 80px;
+    color: $icon-gray;
+
+    &:hover {
+        color:#112237;
+    }
+}
+
+.search_bitstreams_div {
+
+    .radio {
+        margin-left: 6px;
+    }
+}
+
+#aspect_statistics_StatletTransformer_div_showStats a {
+    font-weight: normal;
+    font-size:14px;
+}
+
+#aspect_statistics_StatletTransformer_div_statswrapper {
+    margin-bottom: 20px;
+}
+
+.altmetric-embed {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.rss-button {
+    float: right;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+
+
+.rss-item {
+  list-style: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+
+  .rss-title {
+    font-weight: 500;
+  }
+
+  .rss-read-more {
+    margin-top: -10px;
+    padding-bottom: 15px;
+  }
+
+  .form-type-item {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.rss-item:not(:last-of-type) .rss-read-more {
+  border-bottom: 1px solid gray;
+}
+
+#aspect_discovery_AJAXVocabularySearch_div_advanced-search {
+
+    ul {
+        list-style: none;
+        li label {
+            padding-left: 6px;
+        }
+    }
+
+  .rss-button {
+    visibility: hidden;
+    display: none;
+  }
+
+}
+
+div.ds-logo-wrapper{
+  float: left;
+}
+
+#aspect_statistics_StatletTransformer_div_statscontent {
+  height: auto;
+}
+
+.community-browser-row {
+    height: 40px;
+
+    & > div:last-child{
+        padding-top: 5px;
+    }
+}

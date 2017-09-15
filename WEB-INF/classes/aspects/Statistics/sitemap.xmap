@@ -1,0 +1,619 @@
+<?xml version="1.0"?>
+<!--
+  sitemap.xmap
+
+  Version: $Revision: 1.19 $
+
+  Date: $Date: 2006/08/08 22:00:02 $
+
+  Copyright (c) 2002-2005, Hewlett-Packard Company and Massachusetts
+  Institute of Technology.  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+
+  - Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+  - Neither the name of the Hewlett-Packard Company nor the name of the
+  Massachusetts Institute of Technology nor the names of their
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+  OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+-->
+
+<!--
+
+The ArtifactBrowser Aspect is responsible for browsing communities /
+collections / items / and bitstreams, viewing an individual item,
+and searching the repository.
+
+-->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+
+
+		<map:transformers>
+			<map:transformer name="StatletTransformer" src="org.dspace.app.xmlui.aspect.statistics.StatletTransformer"/>
+			<map:transformer name="StatletWizard" src="org.dspace.app.xmlui.aspect.statistics.StatletWizard"/>
+			<map:transformer name="GraphEditor" src="org.dspace.app.xmlui.aspect.statistics.GraphEditor"/>
+			<map:transformer name="OldGraphEditor" src="org.dspace.app.xmlui.aspect.statistics.OldGraphEditor"/>
+            <map:transformer name="IncludePageMeta" src="org.dspace.app.xmlui.wing.IncludePageMeta"/>
+            <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer"/>
+            <map:transformer name="Navigation" src="org.dspace.app.xmlui.aspect.statistics.Navigation"/>
+            <map:transformer name="NotAuthorized" src="org.dspace.app.xmlui.aspect.statistics.NotAuthorized"/>
+            <map:transformer name="DataSourceTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.DataSourceTransformer"/>
+            <map:transformer name="CountHitsForTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.CountHitsForTransformer"/>
+            <map:transformer name="ContentTreeTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.ContentTreeTransformer"/>
+            <map:transformer name="TopNTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.TopNTransformer"/>
+            <map:transformer name="BagTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.BagTransformer"/>
+            <map:transformer name="DataTableTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.DataTableTransformer"/>
+            <map:transformer name="UpdateButtonTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.UpdateButtonTransformer"/>
+            <map:transformer name="GraphSettingsTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.GraphSettingsTransformer"/>
+            <map:transformer name="GraphTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.GraphTransformer"/>
+            <map:transformer name="TimeFilterTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.TimeFilterTransformer"/>
+            <map:transformer name="ContentTabsTransformer" src="org.dspace.app.xmlui.aspect.statistics.editorparts.ContentTabsTransformer"/>
+            <map:transformer name="StatisticsSearchResultTransformer" src="org.dspace.app.xmlui.aspect.statistics.StatisticsSearchResultTransformer"/>
+            <map:transformer name="MostPopular" src="com.atmire.app.xmlui.aspect.statistics.MostPopularItems"/>
+        </map:transformers>
+
+
+		<map:matchers default="wildcard">
+			<map:matcher name="HandleTypeMatcher" src="org.dspace.app.xmlui.aspect.general.HandleTypeMatcher"/>
+			<map:matcher name="HandleAuthorizedMatcher" src="org.dspace.app.xmlui.aspect.general.HandleAuthorizedMatcher"/>
+            <map:matcher name="StatisticsAuthorizedMatcher" src="org.dspace.app.xmlui.aspect.statistics.StatisticsAuthorizedMatcher"/>
+		</map:matchers>
+
+        <map:selectors>
+            <map:selector name="AuthenticatedSelector" src="org.dspace.app.xmlui.aspect.general.AuthenticatedSelector"/>
+            <map:selector name="AuthenticateGraphSelector" src="org.dspace.app.xmlui.aspect.statistics.AuthenticateGraphSelector"/>
+            <map:selector name="SpecificDatasourceSelector" src="org.dspace.app.xmlui.aspect.statistics.editorparts.SpecificDatasourceSelector"/>
+            <map:selector name="CrawlerSelector" src="org.dspace.app.xmlui.aspect.statistics.CrawlerSelector"/>
+        </map:selectors>
+
+        <map:actions>
+            <map:action name="StartAuthentication" src="org.dspace.app.xmlui.aspect.eperson.StartAuthenticationAction"/>
+            <map:action name="StatisticsLoggerAction" src="org.dspace.app.xmlui.aspect.statistics.StatisticsLoggerAction"/>
+            <map:action name="UpdateGraphAction" src="org.dspace.app.xmlui.aspect.statistics.editorparts.UpdateGraphAction"/>
+            <map:action name="SearchResultLogAction" src="org.dspace.app.xmlui.aspect.statistics.SearchResultLogAction" />
+        </map:actions>
+
+
+	</map:components>
+	<map:pipelines>
+		<map:pipeline>
+
+
+			<map:generate/>
+            <map:transform type="Navigation"/>
+
+            <map:match pattern="most-popular">
+                <map:transform type="MostPopular">
+                    <map:parameter name="by-country" value="false"/>
+                </map:transform>
+                <map:serialize type="xml"/>
+            </map:match>
+
+            <map:match pattern="handle/*/*/most-popular">
+                <map:transform type="MostPopular">
+                    <map:parameter name="by-country" value="false"/>
+                </map:transform>
+                <map:serialize type="xml"/>
+            </map:match>
+
+            <map:match pattern="statistics-by-country">
+                <map:transform type="MostPopular">
+                    <map:parameter name="by-country" value="country"/>
+                </map:transform>
+                <map:serialize type="xml"/>
+            </map:match>
+
+            <map:match pattern="handle/*/*/statistics-by-country">
+                <map:transform type="MostPopular">
+                    <map:parameter name="by-country" value="country"/>
+                </map:transform>
+                <map:serialize type="xml"/>
+            </map:match>
+
+
+            <!-- Handle specific features -->
+            <map:match pattern="handle/*/**">
+
+                <!-- Community, Collection, and Item Viewers -->
+                <map:match pattern="handle/*/*">
+                    <map:match type="HandleAuthorizedMatcher" pattern="READ">
+                        <map:match type="HandleTypeMatcher" pattern="community">
+                            <map:select type="CrawlerSelector">
+                                <map:when test="notbot">
+                                    <map:match type="StatisticsAuthorizedMatcher" pattern="READ">
+                                        <map:parameter name="type" value="usage,search,workflow"/>
+
+                                        <map:transform type="StatletTransformer"/>
+                                        <map:transform type="cinclude"/>
+                                        <map:transform type="IncludePageMeta">
+                                            <map:parameter name="javascript.static#1" value="loadJQuery.js"/>
+                                            <map:parameter name="javascript.static#2" value="aspects/ReportingSuite/statlet.js"/>
+                                        </map:transform>
+
+                                        <map:select type="browser">
+                                            <map:when test="explorer6">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                    <map:parameter name="stylesheet.screen#333" value="../../themes/ReportingSuite/lib/statistics-style-ie6.css"/>
+                                                    <map:parameter name="stylesheet.screen#444" value="../../themes/ReportingSuite/lib/statistics-theme-specific.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:when test="explorer7">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                    <map:parameter name="stylesheet.screen#333" value="../../themes/ReportingSuite/lib/statistics-theme-specific.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:otherwise>
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#666" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#777" value="../../themes/ReportingSuite/lib/statistics-theme-specific.css"/>
+                                                </map:transform>
+                                            </map:otherwise>
+                                        </map:select>
+                                    </map:match>
+                                </map:when>
+                            </map:select>
+
+                        </map:match>
+                        <map:match type="HandleTypeMatcher" pattern="collection">
+                            <!--<map:act type="StatisticsLoggerAction"/>-->
+                            <map:select type="CrawlerSelector">
+                                <map:when test="notbot">
+                                    <map:match type="StatisticsAuthorizedMatcher" pattern="READ">
+                                        <map:parameter name="type" value="usage,search,workflow"/>
+
+                                        <map:transform type="StatletTransformer"/>
+                                        <map:transform type="cinclude"/>
+                                        <map:transform type="IncludePageMeta">
+                                            <map:parameter name="javascript.static#1" value="loadJQuery.js"/>
+                                            <map:parameter name="javascript.static#2" value="aspects/ReportingSuite/statlet.js"/>
+                                        </map:transform>
+
+                                        <map:select type="browser">
+                                            <map:when test="explorer6">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                    <map:parameter name="stylesheet.screen#333" value="../../themes/ReportingSuite/lib/statistics-style-ie6.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:when test="explorer7">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:otherwise>
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#666" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                </map:transform>
+                                            </map:otherwise>
+                                        </map:select>
+                                    </map:match>
+                                </map:when>
+                            </map:select>
+                        </map:match>
+                        <map:match type="HandleTypeMatcher" pattern="item">
+                            <!--<map:act type="StatisticsLoggerAction"/>-->
+                            <map:select type="CrawlerSelector">
+                                <map:when test="notbot">
+                                    <map:match type="StatisticsAuthorizedMatcher" pattern="READ">
+                                        <map:parameter name="type" value="usage,search,workflow"/>
+
+                                        <map:transform type="StatletTransformer"/>
+                                        <map:transform type="cinclude"/>
+                                        <map:transform type="IncludePageMeta">
+                                            <map:parameter name="javascript.static#1" value="loadJQuery.js"/>
+                                            <map:parameter name="javascript.static#2" value="aspects/ReportingSuite/statlet.js"/>
+                                        </map:transform>
+
+                                        <map:select type="browser">
+                                            <map:when test="explorer6">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:when test="explorer7">
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                    <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                                </map:transform>
+                                            </map:when>
+                                            <map:otherwise>
+                                                <map:transform type="IncludePageMeta">
+                                                    <map:parameter name="stylesheet.screen#666" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                                </map:transform>
+                                            </map:otherwise>
+                                        </map:select>
+                                    </map:match>
+                                </map:when>
+                            </map:select>
+                        </map:match>
+                    </map:match>
+				</map:match>
+
+            </map:match> <!-- End match handle/*/** -->
+
+            <map:match pattern="atmire/reporting-suite/statlet-wizard">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="stylesheet.screen#2222" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                </map:transform>
+
+                <map:transform type="StatletWizard"/>
+
+            </map:match>
+
+
+            <map:match pattern="atmire/reporting-suite/content-graph-editor">
+                <map:select type="AuthenticateGraphSelector">
+                    <map:when test="eperson">
+                        <!--<map:match type="request" pattern="administrative-continue">-->
+                        <!--<map:call continuation="{1}"/>-->
+                        <!--</map:match>-->
+                        <map:select type="browser">
+                            <map:when test="explorer6">
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/statistics-style-ie6.css"/>
+                                      <map:parameter name="stylesheet.screen#4" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#5" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:when>
+                            <map:when test="explorer">
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#4" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:when>
+                            <map:otherwise>
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:otherwise>
+                        </map:select>
+
+                        <!--Add our javascript-->
+                        <map:transform type="IncludePageMeta">
+                            <map:parameter name="javascript.static#1" value="aspects/ReportingSuite/oldGraphEditor.js"/>
+                            <map:parameter name="javascript.static#2" value="aspects/ReportingSuite/farbtastic.js"/>
+                            <map:parameter name="javascript.static#3" value="aspects/ReportingSuite/jquery.datePicker.js"/>
+                            <map:parameter name="javascript.static#4" value="aspects/ReportingSuite/jquery.bgiframe.min.js"/>
+                            <map:parameter name="javascript.static#5" value="aspects/ReportingSuite/date.js"/>
+                        </map:transform>
+
+                        <!--<map:transform type="IncludePageMeta">-->
+                        <!--<map:parameter name="stylesheet.screen#2222" value="../themes/ReportingSuite/lib/statistics-style.css"/>-->
+                        <!--</map:transform>-->
+
+                        <map:transform type="OldGraphEditor"/>
+                    </map:when>
+                    <map:when test="personPresent">
+                        <!--Show a not authorized exception-->
+                        <map:transform type="NotAuthorized"/>
+                    </map:when>
+                    <map:otherwise>
+                        <map:act type="StartAuthentication"/>
+                    </map:otherwise>
+                </map:select>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datasourcepane">
+                <map:transform type="DataSourceTransformer"/>
+                <map:transform type="CountHitsForTransformer"/>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datapane">
+                <map:act type="UpdateGraphAction">
+                    <map:transform type="ContentTabsTransformer"/>
+                    <map:transform type="TimeFilterTransformer"/>
+                    <map:transform type="DataTableTransformer"/>
+                    <map:transform type="GraphSettingsTransformer"/>
+                </map:act>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datapanecontent">
+                <map:act type="UpdateGraphAction">
+                    <map:transform type="TimeFilterTransformer"/>
+                    <map:transform type="DataTableTransformer"/>
+                    <map:transform type="GraphSettingsTransformer"/>
+                </map:act>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datasourceselect">
+                <map:transform type="DataSourceTransformer"/>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datasourceselect-specific">
+                <map:select type="SpecificDatasourceSelector">
+                    <map:when test="3-1">
+                        <map:transform type="ContentTreeTransformer"/>
+                    </map:when>
+                    <map:when test="4-1">
+                        <map:transform type="ContentTreeTransformer"/>
+                    </map:when>
+                    <map:when test="0-2">
+                        <map:transform type="TopNTransformer"/>
+                    </map:when>
+                    <map:when test="2-2">
+                        <map:transform type="TopNTransformer"/>
+                    </map:when>
+                    <map:when test="3-2">
+                        <map:transform type="TopNTransformer"/>
+                    </map:when>
+                    <map:when test="4-2">
+                        <map:transform type="TopNTransformer"/>
+                    </map:when>
+                    <map:when test="0-1">
+                        <map:transform type="BagTransformer"/>
+                    </map:when>
+                    <map:when test="2-1">
+                        <map:transform type="BagTransformer"/>
+                    </map:when>
+                </map:select>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/counthitsfor">
+                <map:transform type="CountHitsForTransformer"/>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/datatable">
+                <map:act type="UpdateGraphAction">
+                    <map:transform type="DataTableTransformer"/>
+                </map:act>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/graphsettings">
+                <map:act type="UpdateGraphAction">
+                    <map:transform type="GraphSettingsTransformer"/>
+                </map:act>
+            </map:match>
+
+            <map:match pattern="atmire/reporting-suite/graph-editor/graph">
+                <map:act type="UpdateGraphAction">
+                    <map:transform type="GraphTransformer"/>
+                </map:act>
+            </map:match>
+
+
+            <map:match pattern="atmire/reporting-suite/usage-graph-editor">
+                <map:select type="AuthenticateGraphSelector">
+                    <map:when test="eperson">
+                        <map:select type="browser">
+                            <map:when test="explorer6">
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../aspects/Datatables/DataTables-1.8.0/media/css/datatables.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../..//themes/AtmireModules/lib/css/datatables-overrides.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#4" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                    <map:parameter name="stylesheet.screen#5" value="../../themes/ReportingSuite/lib/statistics-style-ie6.css"/>
+                                    <map:parameter name="stylesheet.screen#6" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#7" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:when>
+                            <map:when test="explorer7">
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../aspects/Datatables/DataTables-1.8.0/media/css/datatables.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../..//themes/AtmireModules/lib/css/datatables-overrides.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#4" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                    <map:parameter name="stylesheet.screen#5" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#6" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:when>
+                            <map:otherwise>
+                                <map:transform type="IncludePageMeta">
+                                    <map:parameter name="stylesheet.screen#1" value="../../aspects/Datatables/DataTables-1.8.0/media/css/datatables.css"/>
+                                    <map:parameter name="stylesheet.screen#2" value="../..//themes/AtmireModules/lib/css/datatables-overrides.css"/>
+                                    <map:parameter name="stylesheet.screen#3" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    <map:parameter name="stylesheet.screen#4" value="../../themes/ReportingSuite/lib/datePicker.css"/>
+                                    <map:parameter name="stylesheet.screen#5" value="../../themes/ReportingSuite/lib/statistics-mirage.css"/>
+                                </map:transform>
+                            </map:otherwise>
+                        </map:select>
+
+                        <!--Add our javascript-->
+                        <map:transform type="IncludePageMeta">
+                            <map:parameter name="javascript.static" value="aspects/ReportingSuite/graphEditor.js"/>
+                        </map:transform>
+
+
+                        <map:transform type="GraphEditor"/>
+                        <!--<map:transform type="DataSourceTransformer"/>-->
+                        <!--<map:transform type="CountHitsForTransformer"/>-->
+                        <!--<map:transform type="UpdateButtonTransformer"/>-->
+                        <map:transform type="UpdateButtonTransformer"/>
+                        <map:act type="UpdateGraphAction">
+                            <map:transform type="ContentTabsTransformer"/>
+                            <map:transform type="TimeFilterTransformer"/>
+                            <map:transform type="DataTableTransformer"/>
+                            <map:transform type="GraphSettingsTransformer"/>
+                        </map:act>
+                    </map:when>
+                    <map:when test="personPresent">
+                        <!--Show a not authorized exception-->
+                        <map:transform type="NotAuthorized"/>
+                    </map:when>
+                    <map:otherwise>
+                        <map:act type="StartAuthentication"/>
+                    </map:otherwise>
+                </map:select>
+            </map:match>
+
+
+            <map:match pattern="">
+                <map:act type="StatisticsLoggerAction"/>
+                <map:select type="CrawlerSelector">
+                    <map:when test="notbot">
+                        <map:match type="StatisticsAuthorizedMatcher" pattern="READ">
+                            <map:parameter name="type" value="usage,search,workflow"/>
+
+                            <map:transform type="StatletTransformer"/>
+                            <map:transform type="cinclude"/>
+                            <map:transform type="IncludePageMeta">
+                                <map:parameter name="javascript.static#1" value="loadJQuery.js"/>
+                                <map:parameter name="javascript.static#2" value="aspects/ReportingSuite/statlet.js"/>
+                            </map:transform>
+
+                            <map:select type="browser">
+                                <map:when test="explorer6">
+                                    <map:transform type="IncludePageMeta">
+                                        <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                        <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                        <map:parameter name="stylesheet.screen#333" value="../../themes/ReportingSuite/lib/statistics-style-ie6.css"/>
+                                    </map:transform>
+                                </map:when>
+                                <map:when test="explorer7">
+                                    <map:transform type="IncludePageMeta">
+                                        <map:parameter name="stylesheet.screen#111" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                        <map:parameter name="stylesheet.screen#222" value="../../themes/ReportingSuite/lib/statistics-style-ie.css"/>
+                                    </map:transform>
+                                </map:when>
+                                <map:otherwise>
+                                    <map:transform type="IncludePageMeta">
+                                        <map:parameter name="stylesheet.screen#666" value="../../themes/ReportingSuite/lib/statistics-style.css"/>
+                                    </map:transform>
+                                </map:otherwise>
+                            </map:select>
+                        </map:match>
+                    </map:when>
+                </map:select>
+            </map:match>
+
+            <map:match pattern="dso-display">
+                <map:act type="SearchResultLogAction"/>
+            </map:match>
+
+
+            <map:match pattern="search">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                    <map:parameter name="javascript.static.statistics#2" value="static/js/search-results.js"/>
+                </map:transform>
+                <map:transform type="StatisticsSearchResultTransformer">
+                    <map:parameter name="advanced-search" value="false"/>
+                </map:transform>
+            </map:match>
+
+            <map:match pattern="simple-search">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                    <map:parameter name="javascript.static.statistics#2" value="static/js/search-results.js"/>
+                </map:transform>
+                <map:transform type="StatisticsSearchResultTransformer">
+                    <map:parameter name="advanced-search" value="false"/>
+                </map:transform>
+            </map:match>
+
+            <map:match pattern="advanced-search">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                    <map:parameter name="javascript.static.statistics#2" value="static/js/search-results.js"/>
+                </map:transform>
+                <map:transform type="StatisticsSearchResultTransformer">
+                    <map:parameter name="advanced-search" value="true"/>
+                </map:transform>
+            </map:match>
+
+            <map:match pattern="discover">
+                <map:transform type="IncludePageMeta">
+                    <map:parameter name="javascript.static.statistics#100"
+                                   value="static/js/discovery/discovery-results.js"/>
+                </map:transform>
+            </map:match>
+
+            <!-- Handle specific features -->
+            <map:match pattern="handle/*/**">
+                <!-- Scoped browse by features -->
+                <map:match type="HandleAuthorizedMatcher" pattern="READ">
+                    <map:match type="HandleTypeMatcher" pattern="community,collection">
+
+                        <map:match pattern="handle/*/*/dso-display">
+                            <map:act type="SearchResultLogAction"/>
+                        </map:match>
+
+                        <!-- Simple search -->
+                        <map:match pattern="handle/*/*/search">
+                            <map:transform type="IncludePageMeta">
+                                <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                                <map:parameter name="javascript.static.statistics#2"
+                                               value="static/js/search-results.js"/>
+                            </map:transform>
+                            <map:transform type="StatisticsSearchResultTransformer">
+                                <map:parameter name="advanced-search" value="false"/>
+                            </map:transform>
+                        </map:match>
+
+                        <!-- Simple search again, but this time they said it -->
+                        <map:match pattern="handle/*/*/simple-search">
+                            <map:transform type="IncludePageMeta">
+                                <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                                <map:parameter name="javascript.static.statistics#2"
+                                               value="static/js/search-results.js"/>
+                            </map:transform>
+                            <map:transform type="StatisticsSearchResultTransformer">
+                                <map:parameter name="advanced-search" value="false"/>
+                            </map:transform>
+                        </map:match>
+
+                        <!-- Advanced search -->
+                        <map:match pattern="handle/*/*/advanced-search">
+                            <map:transform type="IncludePageMeta">
+                                <map:parameter name="javascript.static.statistics#1" value="loadJQuery.js"/>
+                                <map:parameter name="javascript.static.statistics#2"
+                                               value="static/js/search-results.js"/>
+                            </map:transform>
+                            <map:transform type="StatisticsSearchResultTransformer">
+                                <map:parameter name="advanced-search" value="true"/>
+                            </map:transform>
+                        </map:match>
+
+                        <!--Optional discovery statistics-->
+                        <map:match pattern="handle/*/*/discover">
+                            <map:transform type="IncludePageMeta">
+                                <map:parameter name="javascript.static.statistics#100"
+                                               value="static/js/discovery/discovery-results.js"/>
+                            </map:transform>
+                        </map:match>
+                    </map:match>
+                    <!-- End match community or collection -->
+                </map:match>
+                <!-- End match can read -->
+            </map:match>
+            <!-- End match handle/*/** -->
+
+            <map:serialize type="xml"/>
+
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  aspect.xmap
+
+  Version: $Revision: 3705 $
+ 
+  Date: $Date: 2009-04-11 10:02:24 -0700 (Sat, 11 Apr 2009) $
+ 
+  Copyright (c) 2002-2005, Hewlett-Packard Company and Massachusetts
+  Institute of Technology.  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  - Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+ 
+  - Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+ 
+  - Neither the name of the Hewlett-Packard Company nor the name of the
+  Massachusetts Institute of Technology nor the names of their
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+  OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+-->
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+	
+	<map:components>
+		<map:actions>
+            <map:action name="AddItemToBagAction" src="com.atmire.datatables.DBAddItemToBagAction"/>
+            <map:action name="AddBitstreamToBagAction" src="org.dspace.app.xmlui.aspect.statistics.editorparts.datatables.AddBitstreamToBagAction"/>
+            <map:action name="removeItemFromBagAction" src="com.atmire.datatables.RemoveFromBagAction"/>
+            <map:action name="removeBitstreamFromBagAction" src="org.dspace.app.xmlui.aspect.statistics.editorparts.datatables.RemoveBitstreamFromBagAction"/>
+            <map:action name="clearBagAction" src="com.atmire.datatables.ClearBatchTaskAction"/>
+		</map:actions>
+
+		<map:generators>
+            <map:generator label="content" logger="sitemap.generator.file" name="file" pool-max="32" src="org.apache.cocoon.generation.FileGenerator"/>
+            <map:generator name="DSpaceSearcher" src="org.dspace.app.xmlui.aspect.statistics.editorparts.datatables.JSONDSpaceSearcher"/>
+            <map:generator name="BagSearcher" src="org.dspace.app.xmlui.aspect.statistics.editorparts.datatables.JSONBagSearcher"/>
+		</map:generators>
+
+        <map:readers>
+            <map:reader name="geo-stat-ajax" src="com.atmire.app.xmlui.aspect.statistics.JSONStatsGeoIQ"/>
+        </map:readers>
+
+
+        <map:selectors>
+            <map:selector name="SpecificDatasourceSelector" src="org.dspace.app.xmlui.aspect.statistics.editorparts.SpecificDatasourceSelector"/>
+        </map:selectors>
+
+        <map:serializers>
+            <map:serializer name="text" src="org.apache.cocoon.serialization.TextSerializer" mime-type="text/plain" logger="sitemap.serializer.text" />
+        </map:serializers>
+		
+	</map:components>
+	
+	<map:pipelines>
+		
+		<map:pipeline>
+			
+            <map:match pattern="**">
+
+                <map:match pattern="geo-stat-ajax">
+                    <map:read type="geo-stat-ajax" mime-type="application/json;charset=UTF-8"/>
+
+                </map:match>
+
+                <map:match pattern="searchdspace">
+                    <map:generate type="DSpaceSearcher">
+                        <map:parameter name="ramDirPrefix" value="cua_"/>
+                    </map:generate>
+
+                    <map:act type="locale">
+                        <map:transform type="i18n">
+                            <map:parameter name="locale" value="{locale}"/>
+                        </map:transform>
+                    </map:act>
+                    <map:transform src="translatedxml2text.xslt"/>
+                    <map:transform src="xml2json.xslt"/>
+                </map:match>
+
+                <map:match pattern="searchbag">
+                    <map:generate type="BagSearcher">
+                        <map:parameter name="ramDirPrefix" value="cua_"/>
+                    </map:generate>
+                    <map:act type="locale">
+                        <map:transform type="i18n">
+                            <map:parameter name="locale" value="{locale}"/>
+                        </map:transform>
+                    </map:act>
+                    <map:transform src="translatedxml2text.xslt"/>
+                    <map:transform src="xml2json.xslt"/>
+                </map:match>
+
+                <map:match pattern="addToBag">
+                    <map:generate type="file" src="success.xml"/>
+                    <map:select type="SpecificDatasourceSelector">
+                        <map:when test="0-1">
+                            <map:act type="AddBitstreamToBagAction"/>
+                        </map:when>
+                        <map:when test="2-1">
+                            <map:act type="AddItemToBagAction">
+                                <map:parameter name="ramDirPrefix" value="cua_"/>
+                            </map:act>
+                        </map:when>
+                    </map:select>
+                </map:match>
+
+                <map:match pattern="removeFromBag">
+                    <map:generate type="file" src="success.xml"/>
+                    <map:select type="SpecificDatasourceSelector">
+                        <map:when test="0-1">
+                            <map:act type="removeBitstreamFromBagAction"/>
+                        </map:when>
+                        <map:when test="2-1">
+                            <map:act type="removeItemFromBagAction">
+                                <map:parameter name="ramDirPrefix" value="cua_"/>
+                            </map:act>
+                        </map:when>
+                    </map:select>
+                </map:match>
+
+                <map:match pattern="clearBag">
+                    <map:generate type="file" src="success.xml"/>
+                    <map:act type="clearBagAction">
+                        <map:parameter name="ramDirPrefix" value="cua_"/>
+                    </map:act>
+                </map:match>
+
+                <map:match pattern="i18n">
+                    <map:generate type="file" src="ReportingSuite/i18n.xml"/>
+                    <map:act type="locale">
+                        <map:transform type="i18n">
+                            <map:parameter name="locale" value="{locale}"/>
+                        </map:transform>
+                    </map:act>
+                    <map:transform src="translatedxml2text.xslt"/>
+                    <map:transform src="xml2json.xslt"/>
+                </map:match>
+
+                <map:serialize type="text"/>
+                <!--<map:serialize type="xml"/>-->
+            </map:match>
+
+		</map:pipeline>
+		
+	</map:pipelines>
+</map:sitemap>

@@ -1,0 +1,87 @@
+.ui-dialog,
+form#aspect_statistics_GraphEditor_div_wrapper,
+.ui-dialog td,
+form#aspect_statistics_GraphEditor_div_wrapper td,
+.ui-dialog th,
+form#aspect_statistics_GraphEditor_div_wrapper th,
+.ui-dialog select,
+form#aspect_statistics_GraphEditor_div_wrapper select{
+    font-size: 12px;
+}
+
+.ui-dialog .odd,
+.ui-dialog .even,
+form#aspect_statistics_GraphEditor_div_wrapper .odd,
+form#aspect_statistics_GraphEditor_div_wrapper .even {
+    background-color: white;
+}
+
+.ui-dialog th,
+form#aspect_statistics_GraphEditor_div_wrapper th {
+    text-align: left;
+    padding:1px;
+}
+
+.ui-dialog td,
+form#aspect_statistics_GraphEditor_div_wrapper td {
+    padding:0;
+}
+
+.ui-dialog fieldset.ds-checkbox-field input,
+form#aspect_statistics_GraphEditor_div_wrapper fieldset.ds-checkbox-field input {
+    margin: 3px 3px 3px 4px;
+}
+
+.ui-dialog label,
+form#aspect_statistics_GraphEditor_div_wrapper label {
+    padding: 0;
+    float:none;
+    display: inline;
+}
+
+.ui-dialog table,
+form#aspect_statistics_GraphEditor_div_wrapper table {
+    border-spacing: 2px;
+}
+
+.ui-dialog table.leftpopup,
+form#aspect_statistics_GraphEditor_div_wrapper table.leftpopup {
+    border-spacing: 0;
+}
+
+.ui-dialog li.ds-form-item,
+form#aspect_statistics_GraphEditor_div_wrapper li.ds-form-item {
+    padding: 5px;
+}
+
+.ui-dialog fieldset.ds-form-list,
+form#aspect_statistics_GraphEditor_div_wrapper fieldset.ds-form-list {
+    border: none;
+}
+
+.ui-dialog div.ds-form-content,
+form#aspect_statistics_GraphEditor_div_wrapper div.ds-form-content {
+    padding: 0;
+}
+
+.ui-dialog li,
+form#aspect_statistics_GraphEditor_div_wrapper li {
+    margin-left: 0;
+}
+
+.ui-dialog div.ds-form-content,
+form#aspect_statistics_GraphEditor_div_wrapper div.ds-form-content {
+    width: auto;
+}
+
+.ui-dialog div.fieldset.ds-form-list ol ,
+form#aspect_statistics_GraphEditor_div_wrapper fieldset.ds-form-list ol  {
+    padding: 3px;
+}
+
+.ui-dialog .ds-text-field ,
+form#aspect_statistics_GraphEditor_div_wrapper .ds-text-field  {
+    border: 1px solid #DDDDDD;
+    margin: 3px;
+    padding: 3px;
+}

@@ -1,0 +1,48 @@
+/*YUI font initialization*/
+div.atmire-notification {
+    font: 13px sans-serif;
+    *font-size: small;
+    *font: x-small;
+}
+
+div.atmire-notification {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    height: 0;
+    width: 100%;
+    z-index: 2;
+    color: #444;
+}
+
+div.atmire-notification div.atmire-notification-content {
+    border: 1px solid #444;
+    background-color: #fffff2;
+    margin: auto;
+    font-size: 123.1%;
+    padding: 5px;
+    text-align: center;
+}
+
+.borderradius div.atmire-notification div.atmire-notification-content {
+   border-radius: 3px;
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
+}
+
+.rgba.boxshadow div.atmire-notification div.atmire-notification-content {
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    outline:medium none;
+}
+
+div.atmire-notification div.atmire-notification-content.success {
+    border-color: #21c221;
+    background-color: #f2fff2;
+}
+
+div.atmire-notification div.atmire-notification-content.error {
+    border-color: #c22121;
+    background-color: #fff2f2;
+}

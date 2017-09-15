@@ -1,0 +1,241 @@
+#aspect_statistics_GraphEditor_div_wrapper th {
+    text-align: left;
+}
+
+#aspect_statistics_GraphEditor_div_wrapper th,
+#aspect_statistics_GraphEditor_div_wrapper select,
+#aspect_statistics_OldGraphEditor_div_wrapper select
+{
+    font-size: 93%;
+    margin-top: 0;
+}
+
+#aspect_statistics_GraphEditor_div_wrapper li.ds-form-item,
+#aspect_statistics_OldGraphEditor_div_wrapper li.ds-form-item {
+    overflow: hidden;
+    padding: 4px 3px 4px 4px;
+    margin: 0;
+}
+#aspect_statistics_GraphEditor_div_wrapper li.ds-form-item .ds-form-label,
+#aspect_statistics_OldGraphEditor_div_wrapper li.ds-form-item .ds-form-label {
+    font-size: 108%;
+}
+
+#aspect_statistics_OldGraphEditor_div_wrapper li.ds-form-item label.ds-composite-component {
+    margin-top: 3px;
+}
+
+#aspect_statistics_GraphEditor_div_wrapper li.ds-form-item select {
+    vertical-align: baseline;
+}
+
+#aspect_statistics_editorparts_DataTableTransformer_div_dataTable,
+#aspect_statistics_editorparts_DataTableTransformer_table_dataTable {
+    font-size: 93%;
+}
+
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr {
+	background-color: #ffffff !important;
+    border: 1px solid #ebebeb !important;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr.odd td.sorting_2 ,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr.odd td.sorting_2 {
+	background-color: #ffffff !important;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr.odd td ,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr.odd td {
+	background-color: #ffffff !important;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr.even td.sorting_1 ,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr.even td.sorting_1 {
+	background-color: #fafafa !important;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr.even td.sorting_2 ,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr.even td.sorting_2 {
+	background-color: #fafafa !important;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_contentdiv tr.even td ,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv tr.even td {
+	background-color: #fafafa !important;
+}
+
+.ie8 div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilterwrapperdiv fieldset {
+    width: 132px;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv > a {
+    vertical-align: bottom !important;
+}
+
+#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings li.ds-form-item {
+    margin-bottom:0;
+    font-size:93%;
+    clear: both;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilterwrapperdiv {
+    border-bottom: none;
+}
+
+.ui-tabs .ui-tabs-panel {
+    margin-top: 0;
+}
+
+
+.ui-tabs-nav.ui-corner-all {
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ui-tabs-nav .ui-state-default,
+.ui-tabs-nav .ui-state-default a{
+    color: #575757;
+}
+
+.ui-tabs-nav .ui-state-active,
+.ui-tabs-nav .ui-state-active a{
+    color: #444444;
+}
+
+.ui-tabs-nav .ui-state-hover {
+    border: 1px solid #DADADA;
+    background: #fcfcfc url(../../../aspects/jqueryui/images/jquery_ui/ui-bg_flat_100_b6c8d9_40x100.png) 50% 50% repeat-x;
+    font-weight: bold;
+    color: #444444;
+}
+
+.ui-tabs-nav .ui-state-hover a{
+    color: #444444;
+}
+
+.ui-tabs-nav .ui-state-active.ui-state-hover {
+    border: 1px solid #dadada;
+    background: #ffffff url(../../../aspects/jqueryui/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+    font-weight: bold;
+    color: #444444;
+}
+
+div#ds-body {
+    position: relative;
+}
+
+#aspect_statistics_GraphEditor_field_maximize.normal,
+#aspect_statistics_OldGraphEditor_field_maximize.normal {
+  right:0;
+  top:5px;
+}
+
+img.foldableHelpButton.normal {
+    right: 12px !important;
+    top: 60px !important;
+}
+
+img.foldableHelpButton.maximized {
+    top: 60px !important;
+    right: 22px !important;
+}
+
+div.dtcontainer th {
+    padding: 3px;
+}
+
+span.communityCollapser {
+    float: left;
+}
+
+li#aspect_statistics_OldGraphEditor_item_dimensions label.ds-form-label{
+    float: left;
+}
+
+#aspect_statistics_OldGraphEditor_div_wrapper .dcInputSource label{
+    display: block;
+}
+
+#aspect_statistics_OldGraphEditor_div_wrapper .commCollList {
+    margin-bottom: 5px;
+}
+
+#aspect_statistics_OldGraphEditor_div_wrapper .ds-composite-component input {
+    margin: 0;
+    width:auto;
+}
+
+#aspect_statistics_OldGraphEditor_div_wrapper .ds-composite-component select,
+#aspect_statistics_OldGraphEditor_div_wrapper .ds-composite-component input {
+    margin-left: 0;
+    width:auto;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv{
+    margin-top: 26px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv select{
+    margin-top: 5px;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv p{
+    margin: 0;
+}
+
+.time-update-button {
+    margin-top: 42px;
+}
+
+#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings {
+    overflow: hidden;
+}
+
+#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings .ds-form-item:after  {
+     content: ".";
+    display: block; 
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings .ds-form-item  {
+     display: inline-block;
+}
+
+#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings .ds-form-item  {
+     display: block;
+}
+
+div.foldableHelp table {
+    border-collapse: separate;
+}
+
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings li.collapsibleSubTreeLabel,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings li.collapsibleSubTreeLabel {
+    padding-left: 0;
+    margin-left: -1px;
+}
+
+.ie7 div#aspect_statistics_GraphEditor_div_dataSourceSettings li.collapsibleSubTreeLabel,
+.ie8 div#aspect_statistics_GraphEditor_div_dataSourceSettings li.collapsibleSubTreeLabel,
+.ie9 div#aspect_statistics_GraphEditor_div_dataSourceSettings li.collapsibleSubTreeLabel,
+.ie7 fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings li.collapsibleSubTreeLabel,
+.ie8 fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings li.collapsibleSubTreeLabel,
+.ie9 fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings li.collapsibleSubTreeLabel {
+    padding-left: 15px;
+    margin-left: 0;
+}

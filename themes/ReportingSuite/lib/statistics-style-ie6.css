@@ -1,0 +1,82 @@
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_dataTableContainer,
+div#aspect_statistics_OldGraphEditor_div_dataTableContainer,
+div#aspect_statistics_StatletTransformer_div_statistic{
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 580px;
+    padding-bottom: 20px
+}
+
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_update,
+li#aspect_statistics_OldGraphEditor_item_update{
+    display: block; !important
+}
+
+.lastgenbutton{
+    width: 75%;
+}
+
+.update-button {
+    width: 180px;
+    margin-left:203px;
+}
+
+form#aspect_statistics_GraphEditor_div_wrapper {
+    width: 100% !important;
+    overflow: hidden;
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings {
+    margin-right: 60px;
+}
+
+div#aspect_statistics_editorparts_ContentTabsTransformer_div_datapanecontent {
+    width: 100%;
+}
+
+div#aspect_statistics_editorparts_ContentTabsTransformer_div_datapanecontent .ui-tabs-panel {
+    border: none;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilterwrapperdiv{
+    width: 100% !important; 
+    border-left: 1px solid #dadada !important;
+    border-right: 1px solid #dadada !important;
+    background-color: white !important;
+    /*padding: 0 !important;*/
+    /*margin: 0 !important;*/
+}
+
+div#aspect_statistics_editorparts_GraphSettingsTransformer_div_graphExtractor {
+    width: 100%;
+}
+
+div#aspect_statistics_editorparts_GraphSettingsTransformer_div_graphSettingsContainer,
+div#aspect_statistics_editorparts_DataTableTransformer_div_datatablecontainer {
+    width: 100%;
+    border: 1px solid #dadada !important;
+    border-top: 0 !important;
+}
+
+.ui-datepicker-title {
+    width: 100% !important;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv{
+    width: 380px;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv fieldset.ds-checkbox-field{
+    width: 120px;
+    padding: 0;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv{
+    width: 94px;
+}
+
+div#aspect_statistics_editorparts_CountHitsForTransformer_div_counthits-division table td fieldset label{
+    display: block;
+}
+

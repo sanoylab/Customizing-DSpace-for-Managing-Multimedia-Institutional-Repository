@@ -1,0 +1,67 @@
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+    <map:components>
+
+        <map:actions>
+            <map:action name="ManageFeaturedItemsAction" src="com.atmire.app.xmlui.app.aspect.featured.ManageFeaturedItemsAction"/>
+        </map:actions>
+
+        <map:transformers>
+            <map:transformer name="Navigation" src="com.atmire.app.xmlui.app.aspect.featured.Navigation"/>
+            <map:transformer name="FeaturedItemsList" src="com.atmire.app.xmlui.app.aspect.featured.FeaturedItemsListTransformer"/>
+            <map:transformer name="ManageFeaturedItemsTransformer" src="com.atmire.app.xmlui.app.aspect.featured.ManageFeaturedItemsTransformer"/>
+        </map:transformers>
+
+        <map:matchers default="wildcard">
+            <map:matcher name="HandleTypeMatcher" src="org.dspace.app.xmlui.aspect.general.HandleTypeMatcher"/>
+        </map:matchers>
+
+        <map:selectors>
+            <map:selector name="AuthenticatedSelector" src="org.dspace.app.xmlui.aspect.general.AuthenticatedSelector"/>
+        </map:selectors>
+
+    </map:components>
+
+
+    <map:pipelines>
+        <map:pipeline>
+            <map:generate/>
+
+            <!-- Navigation can decide for itself when to add stuff or not -->
+            <map:transform type="Navigation"/>
+
+    <!--    <map:match pattern="">
+                <map:transform type="FeaturedItemsList"/>
+            </map:match>-->
+
+            <map:match pattern="handle/*/*">
+                <!--<map:match type="HandleTypeMatcher" pattern="community,collection">-->
+                <map:match type="HandleTypeMatcher" pattern="community">
+                    <map:transform type="FeaturedItemsList"/>
+                </map:match>
+            </map:match>
+
+            <map:match pattern="admin/manage-featured-items">
+                <map:select type="AuthenticatedSelector">
+                    <map:when test="administrator">
+                        <map:act type="ManageFeaturedItemsAction">
+                            <map:transform type="notice">
+                                <map:parameter name="outcome" value="{outcome}"/>
+                                <map:parameter name="message" value="{message}"/>
+                            </map:transform>
+
+                        </map:act>
+
+                        <map:transform type="ManageFeaturedItemsTransformer"/>
+                        <map:serialize type="xml"/>
+                    </map:when>
+                    <map:otherwise>
+                        <map:act type="StartAuthentication"/>
+                    </map:otherwise>
+                </map:select>
+            </map:match>
+
+            <map:serialize type="xml"/>
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

@@ -1,0 +1,1020 @@
+.invisibleButton{
+    visibility:hidden;
+}
+
+div.ds-form-content {
+    display: inline;
+    float: none;
+}
+label.ds-form-label {
+    display: inline;
+}
+
+table#aspect_statistics_StatletTransformer_table_list-table{
+/*border: 1px solid #DDDDDD;*/
+    text-align: center;
+    /*border-collapse: collapse;*/
+    border-spacing: 1px;
+    background-color: #DDDDDD;
+    margin-top: 20px;
+}
+div#aspect_statistics_StatletTransformer_div_statswrapper{
+    display: none;
+}
+div.graphdiv{
+    margin-top: 15px;
+    /*border: 1px solid #777777;*/
+    /*background-color: #FFFFFF;*/
+    background-image: url(../../ReportingSuite/images/loading2.gif);
+    background-repeat:no-repeat;
+    /*background-attachment:fixed;*/
+    background-position:center;
+    display:none;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable,
+table#aspect_statistics_OldGraphEditor_table_dataTable{
+    /*border: 1px solid #DDDDDD;*/
+    text-align: center;
+    border-collapse: separate;
+    cursor: pointer;
+    border-spacing: 1px;
+    background-color: #DDDDDD;
+    width: auto;
+}
+
+.commCollList ul {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td,
+table#aspect_statistics_StatletTransformer_table_list-table td{
+    /*z-index: 0;*/
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.datacell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.datacell,
+table#aspect_statistics_StatletTransformer_table_list-table td.datacell{
+    border: 2px solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.headercell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.headercell,
+table#aspect_statistics_StatletTransformer_table_list-table td.headercell{
+    /*border: 1px solid #DDDDDD;*/
+    /*padding-top: 5px;*/
+    /*padding-bottom: 5px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #F9F9F7;
+    font-weight: bold;
+    /*color: #777777;*/
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.labelcell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.labelcell,
+table#aspect_statistics_StatletTransformer_table_list-table td.labelcell{
+    border: 2px solid #EEEEEE;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #EEEEEE;
+    font-weight: bold;
+    /*color: #777777;*/
+    /*min-height: 16px;*/
+}
+
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.topleftcell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.topleftcell{
+    border: none;
+    cursor: default;
+    background-color: #F9F9F7;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.selectedcell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.selectedcell{
+    background-color: #777777;
+    color: #F9F9F7;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.currenteditcell,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.currenteditcell{
+    border: 2px solid #2099FF !important;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable td.vertical,
+table#aspect_statistics_OldGraphEditor_table_dataTable td.vertical{
+    writing-mode: tb-rl;
+}
+
+input#aspect_statistics_editorparts_DataTableTransformer_field_editfield,
+input#aspect_statistics_OldGraphEditor_field_editfield {
+    width: 98%;
+}
+
+.notDisplayed{
+    display: none;
+}
+
+input#aspect_statistics_OldGraphEditor_field_height,
+input#aspect_statistics_OldGraphEditor_field_width {
+    width: 75px;
+}
+div#aspect_statistics_editorparts_DataTableTransformer_div_dataTable input.emptyInput,
+div#aspect_statistics_OldGraphEditor_div_dataTable input.emptyInput{
+    color: #777777;
+}
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_dataTableContainer,
+div#aspect_statistics_OldGraphEditor_div_dataTableContainer,
+div#aspect_statistics_StatletTransformer_div_statistic{
+    overflow-x: auto;
+    /*width: 585px;*/
+}
+
+
+select#aspect_statistics_OldGraphEditor_field_storagedataset1,
+select#aspect_statistics_OldGraphEditor_field_storagedataset2 {
+    display: none;
+}
+p#aspect_statistics_editorparts_DataTableTransformer_p_csv,
+p#aspect_statistics_OldGraphEditor_p_csv{
+    margin-top: 10px;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable div.colorStatusDiv,
+table#aspect_statistics_OldGraphEditor_table_dataTable div.colorStatusDiv {
+    display: block;
+    /*float: left;*/
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable div.colorStatusDiv img ,
+table#aspect_statistics_OldGraphEditor_table_dataTable div.colorStatusDiv img {
+    border: 1px solid #DDDDDD;
+    vertical-align: middle;
+}
+
+table#aspect_statistics_editorparts_DataTableTransformer_table_dataTable div.contentDiv ,
+table#aspect_statistics_OldGraphEditor_table_dataTable div.contentDiv {
+    width: 30px;
+    text-align:right;
+}
+
+div#aspect_statistics_OldGraphEditor_div_colorpickercontainer{
+    position: absolute;
+    background-color: white;
+    display: none;
+}
+
+/*input#aspect_statistics_OldGraphEditor_field_update{*/
+    /*display: none;*/
+/*}*/
+
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_update,
+li#aspect_statistics_OldGraphEditor_item_update{
+    display:none;
+}
+
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(../../ReportingSuite/images/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(../../ReportingSuite/images/mask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden;
+  background: transparent url(../../ReportingSuite/images/marker.png) no-repeat;
+}
+
+
+#aspect_statistics_GraphEditor_field_maximize,
+#aspect_statistics_OldGraphEditor_field_maximize {
+  width: 48px;
+  height: 48px;
+  /*background: transparent url(../../ReportingSuite/images/view-fullscreen.png) no-repeat;*/
+  /*background-image:*/
+  border: 0;
+  cursor:pointer;
+  position: absolute;
+  text-indent: -1000em;
+}
+
+#aspect_statistics_GraphEditor_field_maximize.normal,
+#aspect_statistics_OldGraphEditor_field_maximize.normal {
+  right:5px;
+  top:5px;
+}
+
+#aspect_statistics_GraphEditor_field_maximize.maximized,
+#aspect_statistics_OldGraphEditor_field_maximize.maximized {
+  right:5px;
+  top:5px;
+}
+
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings div.ui-tabs-panel fieldset,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings fieldset{
+    /*border: 1px solid;*/
+    padding:0;
+    /*padding-left:45px;*/
+    /*padding-bottom:15px;*/
+    /*margin-top: -10px;*/
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings div.ui-tabs-panel li ,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings li {
+    float: none;
+    background-color: transparent !important;
+    background: none !important;
+}
+
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset1List_visits,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset2List_visits,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset1List_items,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset2List_items{
+    border:1px solid #CCCCCC;
+    background-color: #F1F1F1;
+    margin:5px;
+    /*margin-left:15px;*/
+    width:500px;
+    float: none;
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings div.ui-tabs-panel fieldset ol li fieldset ol li,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings fieldset ol li fieldset ol li{
+    /*border: 1px solid;*/
+    padding:0px;
+    padding-left:15px;
+    /*padding-bottom:15px;*/
+    /*margin-top: -15px;*/
+}
+
+form#aspect_statistics_GraphEditor_div_wrapper {
+    opacity:0;
+    color:#444444;
+}
+
+form#aspect_statistics_GraphEditor_div_wrapper h2 {
+    margin-top:10px;
+    border-top:1px solid #AAAAAA;
+    cursor:pointer;
+}
+
+form#aspect_statistics_GraphEditor_div_wrapper a:hover {
+    /*margin-top:0px;*/
+    /*border-top:1px solid #AAAAAA;*/
+    text-decoration:none;
+}
+
+label.ds-composite-component input, label.ds-composite-component select {
+    margin-left:5px;
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings div.ui-tabs-panel div.ds-form-content {
+    height:0;
+    /*width: 100%;*/
+    clear: none;
+    width: auto;
+}
+
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings {
+    border: none;
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings  {
+    margin-right: 48px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 1em;
+}
+
+div.ui-tabs-panel {
+    background-color: white;
+}
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings label {
+    float: none;
+}
+
+p.updatepara {
+    clear: both;
+    margin-top: 15px !important;
+}
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_dataTable table,
+div#aspect_statistics_OldGraphEditor_div_dataTable table {
+    border: none;
+}
+
+label.ds-composite-component {
+    background-color:inherit;
+    display:inline;
+    float:none;
+    font-size:0.933em;
+    margin-left:5px;
+    padding:0;
+    text-align:left;
+}
+
+.negativepadding {
+    margin-top: -7px;
+}
+
+
+ul.commCollList, ul.commCollList ul {
+    list-style-type:none;
+}
+
+ul.commCollList ul{
+    padding: 0 0 0 20px !important;
+}
+
+.noscrollbar{
+    overflow: visible !important;
+}
+
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset1List_items label,
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset2List_items label {
+    cursor: pointer;
+    display: inline;
+}
+
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset1List_items a,
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset2List_items a {
+    text-decoration:none;
+}
+
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset1List_items img,
+#aspect_statistics_OldGraphEditor_list_dataSourceSettings_dataset2List_items img {
+    border: none;
+}
+
+.tableWithTitle{
+    margin-top: 0 !important;
+}
+
+#aspect_statistics_StatletTransformer_div_statscontent h3 {
+    padding-top: 15px !important;
+    margin-bottom: 0 !important;
+    font-family:Verdana !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    font-style:normal !important;
+    font-weight:normal !important;
+
+}
+
+#aspect_statistics_StatletTransformer_div_graph{
+    padding-top: 10px !important;
+}
+
+.allNoneLinkDiv{
+    margin-left: 4px;
+    margin-bottom:5px;
+}
+
+.allNoneLinkDiv a{
+    color: #777777;
+    cursor:pointer;
+}
+
+li.lastgenbutton {
+    border-top: none !important;
+    background-color: transparent !important;
+    /*This is a dirty hack to get this working in IE */
+    background: none !important;
+}
+
+
+
+/*fieldset#aspect_statistics_OldGraphEditor_list_graphSettings ol{*/
+         /*border:1px solid #DDDDDD;*/
+/*}*/
+
+img.foldableHelpButton {
+    z-index: 100;
+}
+
+img.foldableHelpButton.normal {
+    top: 60px !important;
+    right: 16px !important;
+}
+
+img.foldableHelpButton.maximized {
+    top: 60px !important;
+    right: 16px !important;
+}
+
+#aspect_statistics_StatletTransformer_div_showStats a{
+    text-decoration: none !important;
+    font-weight:bold;
+    font-size:1.4em;
+}
+
+div#aspect_statistics_editorparts_GraphSettingsTransformer_div_graph img ,
+div#aspect_statistics_editorparts_GraphTransformer_div_graph img ,
+div#aspect_statistics_OldGraphEditor_div_graph img {
+    border: none;
+}
+
+div#aspect_statistics_StatletTransformer_div_showStats table {
+    border: none;
+    width: auto;
+    
+}
+div#aspect_statistics_StatletTransformer_div_showStats td {
+    padding: 0;
+}
+
+div#aspect_statistics_StatletTransformer_div_statswrapper img {
+    border: none;
+}
+
+div#aspect_statistics_StatletTransformer_div_statswrapper table {
+    width: auto;
+    border: none;
+}
+
+form#aspect_statistics_GraphEditor_div_wrapper table{
+    border: none;
+}
+
+div#aspect_statistics_OldGraphEditor_div_datasourcepanecontent_dataset1List_visits fieldset,
+div#aspect_statistics_OldGraphEditor_div_datasourcepanecontent_dataset2List_visits fieldset,
+div#aspect_statistics_OldGraphEditor_div_datasourcepanecontent_dataset1List_items fieldset,
+div#aspect_statistics_OldGraphEditor_div_datasourcepanecontent_dataset2List_items fieldset {
+    border: none !important;
+}
+
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_link ,
+li#aspect_statistics_OldGraphEditor_item_link {
+    float: none !important;
+}
+
+
+div#aspect_statistics_GraphEditor_div_dataSourceSettings div.ui-tabs-panel img ,
+fieldset#aspect_statistics_OldGraphEditor_list_dataSourceSettings img {
+    border: none;
+}
+
+.maximizedwidth {
+    width: 99% !important;
+}
+
+.noMarginsOrAnyOtherCrap {
+    margin: 0 !important;
+    left:0 !important;
+    right:auto !important;
+    float:none !important;
+    border:none !important;
+    width:100% !important;
+}
+
+div.cache {
+    display: none;
+}
+
+
+.apple_overlay {
+
+	/* initially overlay is hidden */
+	display:none;
+
+	/* growing background image */
+	background-image:url(../../ReportingSuite/images/aWhite.png);
+
+	/*
+		width after the growing animation finishes
+		height is automatically calculated
+	*/
+	width:640px;
+
+	/* some padding to layout nested elements nicely  */
+	padding:35px;
+
+}
+
+/* default close button positioned on upper right corner */
+.apple_overlay div.close {
+	background-image:url(../../ReportingSuite/images/aClose.png);
+	position:absolute; right:5px; top:5px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+div.apple_overlay h2 {
+	margin:10px 0 -9px 0;
+	font-weight:bold;
+	font-size:14px;
+}
+
+div.datatablescroller {
+    width: 640px;
+    height: 445px;
+    clear: both;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #f2f2f2;
+    border: 1px solid #CCCCCC;
+}
+
+div.datatablescroller > table {
+    background: white;
+}
+div#aspect_statistics_editorparts_BagTransformer_div_bagvisibilitydiv {
+    display: none;
+}
+
+table#aspect_statistics_editorparts_BagTransformer_table_bitstreambag,
+table#aspect_statistics_editorparts_BagTransformer_table_itembag {
+    clear: both;
+    display: none;
+}
+
+table#aspect_statistics_editorparts_BagTransformer_table_bitstreamtable,
+table#aspect_statistics_editorparts_BagTransformer_table_itemtable,
+.dataTables_wrapper {
+    display: none;
+}
+
+#aspect_statistics_SearchStatistics_div_containerdiv .dataTables_wrapper,
+#aspect_statistics_SearchStatistics_div_containerdiv table.dttable,
+#aspect_statistics_SearchStatistics_div_total table.dttable{
+    display: block;
+}
+
+table.bitstreamtable {
+    width: 100%;
+    background-color: white;
+}
+
+div.tableslider {
+    width: 100%;
+    display: none;
+}
+span.itemspan {
+    line-height: 22px;
+}
+
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_dimensions > label{
+font-size:inherit;
+font-weight:bold;
+margin-left:0;
+}
+
+div#aspect_statistics_editorparts_CountHitsForTransformer_div_counthits-division th {
+    text-align: left;
+}
+
+div#aspect_statistics_editorparts_CountHitsForTransformer_div_counthits-division table td > fieldset > label{
+    display: block; 
+}
+
+div#aspect_statistics_editorparts_DataSourceTransformer_div_specific-datasource-content {
+    clear: both;
+}
+
+/*div#aspect_statistics_GraphEditor_div_datapanecontent {*/
+    /*background-color: white;*/
+    /*padding:12px 16px;*/
+    /*border: 1px solid #dadada;*/
+/*}*/
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilter {
+    overflow: hidden;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilter a.hideOptions,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rangediv{
+    display:none;
+}
+
+div#startCalDiv,
+div#endCalDiv,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv {
+    float: left;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv > fieldset {
+    display: inline;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv > fieldset,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_leftCellDiv > a {
+    vertical-align: middle;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_rightCellDiv {
+    padding: 9px;
+}
+
+table.dataSourceFormTable th {
+    width: 160px;
+    vertical-align: top;
+}
+
+input#aspect_statistics_editorparts_TopNTransformer_field_n {
+    width: 25px;
+}
+
+fieldset.uncheckable {
+    left:2px;
+}
+
+.ui-datepicker div.ui-datepicker-month-slider {
+    float: left;
+    overflow: hidden;
+    width: 49%
+}
+
+.ui-datepicker div.ui-datepicker-month-hideMonths {
+    width: 0;
+}
+
+.ui-datepicker div.ui-datepicker-year-slider {
+    float: right;
+    overflow: hidden;
+    width: 49%
+}
+
+.ui-datepicker div.ui-datepicker-year-hideMonths {
+    width: 100%;
+}
+
+.ui-datepicker div.ui-datepicker-calendar-hideDays {
+    display: none;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+    .ui-datepicker select.ui-datepicker-year {
+    width: 100%;
+}
+
+.ui-datepicker-calendar-slider {
+    margin-top: -2px;
+    border: 1px solid #dadada;
+    background: #ffffff url(../../../aspects/jqueryui/images/old_labs_theme/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+    color: #444444;
+    padding: 2px;
+}
+
+.ui-datepicker table {
+    width: 100%;
+    font-size: .9em;
+    border-collapse: collapse;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 1em 1.4em;
+    display: block;
+    border: 1px solid #dadada;
+    border-top-width: 0;
+    margin-top: -2px;
+    background-color:white;
+}
+
+.ui-widget-content {
+    border: none;
+    background: inherit;
+}
+
+/*.ui-state-hover,*/
+/*.ui-state-hover a, .ui-state-hover a:hover{*/
+    /*color:#2099ff !important;*/
+/*}*/
+
+table.ui-datepicker-calendar .ui-state-active.ui-state-hover,
+table.ui-datepicker-calendar .ui-state-active.ui-state-hover a,
+table.ui-datepicker-calendar .ui-state-active.ui-state-hover a:hover{
+    color:#F7F7F9 !important;
+}
+
+table.ui-datepicker-calendar .ui-state-active,
+table.ui-datepicker-calendar .ui-widget-content .ui-state-active {
+    border: 1px solid #444444;
+    background: #444444 url(../../../aspects/jqueryui/images/old_labs_theme/ui-bg_highlight-soft_100_444444_1x100.png) 50% 50% repeat-x;
+    font-weight: bold;
+    color: #f9f9f7;
+    outline: none;
+}
+
+table.ui-datepicker-calendar .ui-state-active a,
+table.ui-datepicker-calendar.ui-state-active a:link,
+table.ui-datepicker-calendar.ui-state-active a:visited {
+    color: #f9f9f7;
+    outline: none;
+    text-decoration: none;
+}
+
+.ui-tabs .ui-tabs-nav li.closed {
+    border-bottom-width: 1px !important;
+}
+
+ul#aspect_statistics_GraphEditor_list_source-categories.closed{
+    padding-bottom: 4px;
+    /*width: 453px;*/
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilterwrapperdiv {
+    padding-bottom: 0;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilterwrapperdiv fieldset{
+    padding-left: 0;
+}
+
+div#aspect_statistics_editorparts_GraphSettingsTransformer_div_graphExtractor {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_datatablewrapperdiv.loading{
+    height: 300px;
+}
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_datatablewrapperdiv.loading,
+div#aspect_statistics_editorparts_GraphSettingsTransformer_div_graphExtractor.loading {
+    background-image: url(../../ReportingSuite/images/loading2.gif);
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_graphSettings {
+    padding: 0;
+}
+
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilter,
+div#aspect_statistics_editorparts_TimeFilterTransformer_div_timefilter select,
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv,
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings,
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_graphSettings,
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_graphSettings select{
+    font-size: 11.2px;
+}
+
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_graphtype,
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_orientation,
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_legend,
+li#aspect_statistics_editorparts_GraphSettingsTransformer_item_btn {
+    float: left;
+    clear: none;
+    width: auto;
+}
+
+
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings {
+    padding-right: 0;
+    padding-left: 15px;
+    display: none;
+}
+
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings li{
+    padding: 0;
+}
+
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings li > label {
+    float: left;
+    margin-top: 5px;
+}
+
+fieldset#aspect_statistics_editorparts_GraphSettingsTransformer_list_hiddenSettings li > div {
+    float: right;
+}
+
+.add-to-bag-button,
+.time-update-button {
+    background:url("../../../aspects/jqueryui/images/old_labs_theme/ui-bg_highlight-soft_100_F7F7F7_1x100.png") repeat-x scroll 50% 50% #F7F7F7;
+    border: 1px solid #DADADA;
+    color: #444444;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align:center;
+    width:100px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.time-update-button {
+    width: 50px;
+    float: left;
+    margin-top: 25px;
+    display: none;
+}
+
+.update-button {
+    background:url("../../../aspects/jqueryui/images/old_labs_theme/ui-bg_highlight-soft_100_444444_1x100.png") repeat-x scroll 50% 50% #444444;
+    border: 1px solid #444444;
+    color: #f7f7f9;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px auto 15px;
+    text-align:center;
+    width:130px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.graph-settings-button {
+    background:url("../../../aspects/jqueryui/images/old_labs_theme/ui-bg_highlight-soft_100_F7F7F7_1x100.png") repeat-x scroll 50% 50% #F7F7F7;
+    padding: 1px;
+    border: 1px solid #DADADA;
+    color: #444444;
+    font-weight: bold;
+    text-align:center;
+    cursor: pointer;
+}
+
+
+.ie6 .add-to-bag-button,
+.ie7 .add-to-bag-button,
+.ie8 .add-to-bag-button,
+.ie6 .time-update-button,
+.ie7 .time-update-button,
+.ie8 .time-update-button,
+.ie6 .graph-settings-button,
+.ie7 .graph-settings-button,
+.ie8 .graph-settings-button {
+    -ms-filter:"progid:DXImageTransform.Microsoft.glow(Strength=3, Color=#ffffffff)";
+}
+
+.ie6 .update-button,
+.ie7 .update-button,
+.ie8 .update-button {
+    -ms-filter:"progid:DXImageTransform.Microsoft.glow(Strength=3, Color=#fff7f7f9)";
+}
+
+
+
+.boxshadow .button-hover {
+    -moz-box-shadow:0px 0px 5px #2099ff;
+    -webkit-box-shadow:0px 0px 5px #2099ff;
+    box-shadow:0px 0px 5px #2099ff;
+}
+
+
+.ie6 .button-hover,
+.ie7 .button-hover,
+.ie8 .button-hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.glow(Strength=3, Color=#992099ff)";
+}
+
+.ui-tabs {
+    padding: 0;
+    /*-moz-box-shadow:0px 4px 6px rgba(0, 0, 0, 0.6);*/
+    /*-webkit-box-shadow:0px 4px 6px rgba(0, 0, 0, 0.6);*/
+}
+
+.ui-dialog {
+    background:white;
+    border: 1px solid #dadada;
+}
+
+.rgba.boxshadow .ui-dialog {
+    -moz-box-shadow:0px 8px 12px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow:0px 8px 12px rgba(0, 0, 0, 0.6);
+    box-shadow:0px 8px 12px rgba(0, 0, 0, 0.6);
+}
+
+.ie6 .ui-dialog,
+.ie7 .ui-dialog,
+.ie8 .ui-dialog {
+    border: 1px solid #444;
+    -ms-filter: none;
+}
+
+
+
+.ui-dialog-titlebar {
+    margin: -3px;
+}
+
+.borderradius .ui-dialog .ui-button{
+    border-radius: 0;
+}
+
+.ui-dialog .ui-button,
+#ds-options .back-button {
+    background-image: none;
+    background-color: #6D859C;
+    border: 1px solid #1F3F5E;
+    color: #FFFFFF;
+}
+
+.cssgradients .ui-dialog .ui-button,
+.cssgradients #ds-options .back-button {
+    background-image: linear-gradient(top, #7D95AC, #4D657C);
+    background-image: -moz-linear-gradient(center bottom, #4D657C, #7D95AC);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #7D95AC),color-stop(1, #4D657C));
+}
+
+.ie7 .ui-dialog .ui-button,
+.ie7 #ds-options .back-button,
+.ie8 .ui-dialog .ui-button,
+.ie8 #ds-options .back-button,
+.ie9 .ui-dialog .ui-button,
+.ie9 #ds-options .back-button {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #FF7D95AC, endColorstr = #FF4D657C);
+    zoom: 1;
+}
+
+.ui-dialog .ui-button .ui-button-text {
+    color: #FFF;
+}
+
+.unusedHelp {
+    display: none;
+}
+
+span.ds-composite-label-value-combo {
+    display: inline-block;
+    padding: 0 14px 0 0;
+}
+
+span.ds-composite-label-value-combo.last {
+    padding-right: 3px;
+}
+
+span.ds-composite-label-value-combo label{
+    padding: 0;
+    margin: 0;
+}
+
+span.ds-composite-label-value-combo input{
+    padding: 3px;
+    margin: 0;
+}
+
+
+
+
+div.gear-icon {
+    background-image: url("../images/gear_6D859C_25x25.png");
+}
+div.gear-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.float_left{
+    float:left;
+}
+
+span.add-icon{
+    display:block;
+    float:left;
+    height: 20px;
+    width: 20px;
+    background-image: url("../../../aspects/Datatables/shared/images/details_open.png");
+}
+
+span.remove-icon{
+    display:block;
+    float:left;
+    height: 20px;
+    width: 20px;
+    background-image: url("../../../aspects/Datatables/shared/images/details_close.png");
+}
+
+#aspect_statistics_editorparts_BagTransformer_table_bitstreamtable_wrapper .dataTables_processing{
+    color: black;
+}
+#bitstreamTableMenu .ui-icon {
+    width:20px;
+    height:20px;
+}
+div.DataTables_sort_wrapper{
+    cursor: pointer;
+}

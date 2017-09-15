@@ -1,0 +1,51 @@
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: $screen-sm) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-md) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-lg) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+.col-xs-7ths {
+    width: 14%;
+    float: left;
+}
+
+@media (min-width: $screen-sm) {
+    .col-sm-7ths {
+        width: 14%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-md) {
+    .col-md-7ths {
+        width: 14%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-lg) {
+    .col-lg-7ths {
+        width: 14%;
+        float: left;
+    }
+}

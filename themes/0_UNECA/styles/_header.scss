@@ -1,0 +1,42 @@
+header {
+
+    #header-top {
+        padding: 3px 3px;
+        font-size: 12px
+    }
+
+    img.logo {
+        margin-top: 10px;
+        max-width: 100%;
+    }
+
+    .banner{
+        padding-bottom: 5px;
+    }
+
+    .repository-name {
+        color: $header-primary;
+    }
+
+}
+
+#header-search {
+    padding: 8px 0;
+
+    .link {
+        padding-top: $header-search-right-content-padding-top;
+
+        img{
+            max-height: 34px;
+        }
+
+        a {
+            font-size: 12px;
+            margin-right: 5em;
+        }
+    }
+}
+
+.nav > li > a {
+    padding: 10px 8px;
+}

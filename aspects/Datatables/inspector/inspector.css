@@ -1,0 +1,65 @@
+/*************/
+/* inspector */
+/*************/
+div.dtcontainer table.dttable tr.current-item,
+div.dtcontainer table.dttable tr.current-item td {
+    background-color: #b6d9ba !important;
+}
+
+div.inspectorDialog {
+    background-color: #404040;
+    border: none;
+}
+
+.rgba div.inspectorDialog {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ie6 div.inspectorDialog,
+.ie7 div.inspectorDialog,
+.ie8 div.inspectorDialog {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #C0000000, endColorstr = #C0000000);
+    zoom: 1;
+}
+
+div.inspectorDialog div.ui-dialog-titlebar {
+    background: none;
+    background-color: #404040;
+    border: none;
+    color: #ffffff;
+}
+
+div.inspectorDialog div.ui-dialog-titlebar .ui-state-hover {
+    border: none;
+    background: none;
+    padding: 1px;
+}
+
+div.inspectorDialog div.ui-dialog-titlebar .ui-icon-closethick {
+    background-image: url("../../../themes/AtmireModules/images/smoothness/ui-icons_888888_256x240.png");
+    background-position: -32px -192px;
+}
+
+div.inspector-next-button {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../../aspects/Datatables/inspector/images/arrow_down.png");
+    float: left;
+}
+div.inspector-prev-button {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../../aspects/Datatables/inspector/images/arrow_up.png");
+    float: left;
+}
+div.inspector-remove-this-item-button {
+    width: 20px;
+    height: 20px;
+    background-image: url("../shared/images/details_close.png");
+    float: right;
+}
+
+div.inspector th {
+    display: none;
+}

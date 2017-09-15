@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: DSpace XML-UI (Manakin) :: Local Customizations
+Implementation-Version: 5.2
+Archiver-Version: Plexus Archiver
+Built-By: Yonas
+Specification-Vendor: DuraSpace
+Specification-Title: DSpace XML-UI (Manakin) :: Local Customizations
+Implementation-Vendor-Id: org.dspace.modules
+Created-By: Apache Maven 3.3.3
+Build-Jdk: 1.8.0_60
+Specification-Version: 5.2
+Implementation-Vendor: DuraSpace
+

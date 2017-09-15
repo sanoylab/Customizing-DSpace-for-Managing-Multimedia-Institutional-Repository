@@ -1,0 +1,44 @@
+form#aspect_statistics_GraphEditor_div_wrapper {
+    /*?filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);*/
+}
+
+div#aspect_statistics_editorparts_DataTableTransformer_div_dataTableContainer,
+div#aspect_statistics_OldGraphEditor_div_dataTableContainer,
+div#aspect_statistics_StatletTransformer_div_statistic{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+}
+
+input#aspect_statistics_editorparts_DataTableTransformer_field_editfield,
+input#aspect_statistics_OldGraphEditor_field_editfield {
+    width: 100%;
+}
+
+.allNoneLinkDiv{
+    margin-left: 0px;
+}
+
+div#aspect_statistics_editorparts_BagTransformer_div_overlaydiv {
+    overflow: hidden;
+}
+
+.add-to-bag-button,
+.time-update-button {
+    ?filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffffff,Strength=3);
+}
+
+.update-button {
+    ?filter:progid:DXImageTransform.Microsoft.Glow(Color=#fff7f7f9,Strength=3);
+}
+
+.graph-settings-button {
+    ?filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffffff,Strength=3);
+}
+
+.button-hover {
+    ?filter:progid:DXImageTransform.Microsoft.Glow(Color=#992099ff,Strength=3);
+}
+ul.commCollList input{
+    float: left;
+}

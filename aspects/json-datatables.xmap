@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+	<map:components>
+        <map:generators>
+            <map:generator name="ItemDetailsSearcher" src="com.atmire.datatables.inspector.JSONItemDetailsSearcher"/>
+        </map:generators>
+
+        <map:serializers>
+            <map:serializer name="text" src="org.apache.cocoon.serialization.TextSerializer" mime-type="text/plain; charset=UTF-8" logger="sitemap.serializer.text" />
+        </map:serializers>
+        <map:selectors>
+            <map:selector name="rpm" src="org.apache.cocoon.selection.RequestParameterSelector"/>
+        </map:selectors>
+    </map:components>
+
+
+    <map:pipelines>
+
+        <map:pipeline>
+            <map:match pattern="**">
+                <map:match pattern="searchitemdetails">
+                    <map:generate type="ItemDetailsSearcher"/>
+                    <map:act type="locale">
+                        <map:transform type="i18n">
+                            <map:parameter name="locale" value="{locale}"/>
+                        </map:transform>
+                    </map:act>
+                    <map:select type="rpm">
+                        <map:parameter name="parameter-name" value="XML"/>
+                        <map:when test="XML">
+                            <map:serialize type="xml"/>
+                        </map:when>
+                        <map:otherwise>
+                            <map:transform src="translatedxml2text.xslt"/>
+                            <map:transform src="xml2json.xslt"/>
+                            <map:serialize type="text"  />
+                        </map:otherwise>
+                    </map:select>
+
+
+                </map:match>
+            </map:match>
+
+
+
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

@@ -1,0 +1,80 @@
+#aspect_statistics_MostPopularItems_p_controls.row select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+#aspect_statistics_MostPopularItems_div_rangediv {
+    margin-right: 0;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: 99%;
+}
+
+.cua-most-popular .ui-datepicker {
+    border: none;
+}
+
+#aspect_statistics_MostPopularItems_table_statable th.downloads {
+    width: 145px;
+}
+
+#aspect_statistics_MostPopularItems_table_statable th.items {
+    width: 111px;
+}
+
+#aspect_statistics_MostPopularItems_table_statable th.sum {
+    width: 60px;
+}
+
+#aspect_statistics_MostPopularItems_div_geo-stat-table .toggleArrow {
+    margin-top: 6px;
+}
+
+#aspect_statistics_MostPopularItems_table_statable
+{
+    th, td {
+        padding-left: $table-cell-padding !important;
+    }
+}
+
+.interactive_stats_gear_dropdown .dropdown-menu .glyphicon {
+    font-size: 0.85em;
+    font-weight: 100;
+    margin-right: 5px;
+}
+
+div#aspect_statistics_StatletProvider_div_statswrapper,
+div#aspect_statistics_StatletTransformer_div_statswrapper{
+    width: auto;
+    max-width: 675px;
+}
+
+table#aspect_statistics_StatletProvider_table_list-table th {
+    border: none;
+}
+
+table.cua-datatable td.labelcell,
+table#aspect_statistics_ContentAnalysisTransformer_table_dataTable td.labelcell,
+table#aspect_statistics_StatletProvider_table_list-table td.labelcell {
+    text-align: left;
+}
+
+div#aspect_statistics_StatletProvider_div_statswrapper,
+div#aspect_statistics_StatletProvider_div_statscontent,
+div#aspect_statistics_StatletTransformer_div_statswrapper{
+    max-width: 100%;
+}
+
+.graphdiv,
+.graphdiv img {
+    max-width: 100%;
+}
+
+@media (max-width: $screen-xs-max) {
+    div#aspect_statistics_StatletProvider_div_statscontent table {
+        min-width: 100%;
+    }
+}

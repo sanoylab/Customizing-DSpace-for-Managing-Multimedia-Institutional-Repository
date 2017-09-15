@@ -1,0 +1,84 @@
+.recent-submission {
+    .ds-artifact-list {
+        text-align: center;
+
+        .icon-navigate {
+            font-size: $navigate-icon-size;
+            margin-top: ($thumbnail-max-height - $navigate-icon-size) / 2;
+        }
+
+        .artifact-title {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: $screen-sm) {
+        .ds-artifact-item + .ds-artifact-item + .ds-artifact-item {
+            display: none;
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        .ds-artifact-item + .ds-artifact-item + .ds-artifact-item + .ds-artifact-item + .ds-artifact-item {
+            display: none;
+        }
+    }
+
+    & > div > div {
+        height: $recent-submissions-height;
+        overflow: hidden;
+    }
+}
+
+.icon-navigate-parent-empty {
+    display: none;
+}
+
+@media (max-width: $screen-sm) {
+    .recent-submissions-1, .recent-submissions-2 {
+        .icon-navigate-parent {
+            display: none;
+        }
+        .icon-navigate-parent-empty {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: $screen-sm) {
+    .recent-submissions-1, .recent-submissions-2, .recent-submissions-3, .recent-submissions-4 {
+        .icon-navigate-parent {
+            display: none;
+        }
+        .icon-navigate-parent-empty {
+            display: block;
+        }
+    }
+}
+
+.recentSubmissionViewMore {
+    display: none;
+}
+
+.thumbnail.artifact-preview {
+
+    .thumbnail-icon {
+        font-size: $thumbnail-max-height;
+    }
+
+    & > img, & a > img {
+        max-height: $thumbnail-max-height;
+    }
+}
+
+#app_aspect_featured_ManageFeaturedItemsTransformer_div_featured-items {
+
+    & > .ds-static-div {
+        padding-bottom: 30px;
+
+        .thumbnail {
+            margin-bottom: 0;
+        }
+    }
+
+}
